@@ -39,9 +39,9 @@
       const icons = [];
 
       iconElements.forEach(icon => {
-        const parts = icon.className.split(" ");
+        // const parts = icon.className.split(" ");
         // শুধু দ্বিতীয় অংশটি (যেমন "bx-sticker") নিচ্ছি
-        icons.push(parts[1]);
+        icons.push(icon.className);
       });
 
       // ৪️⃣ আউটপুট দেখানো হচ্ছে
@@ -50,3 +50,4 @@
   </script>
 </body>
 </html>
+
