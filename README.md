@@ -1,13 +1,15 @@
 CSS Class Extractor
 CSS Class Extractor is a simple and efficient tool designed to extract icon class names from <i> tags within HTML code and display them in JSON format.This tool is specifically crafted for developers who need to quickly retrieve class names from HTML content.
 
-🌟 Features
+Features
 
 Extracts class names from <i> tags in HTML input
 Displays the list of classes in JSON format
 User-friendly interface
 Fast and efficient performance
 Completely free and open-source
+
+[Css Class Extractor Free](https://mribrahimkhan360.github.io/Css-class-extractor-free/) 
 
 
 Technologies
