@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Extractor</title>
+</head>
+<body>
+  <h3>Paste your HTML below:</h3>
+  <textarea id="htmlInput" rows="8" cols="80">
+<div class="row icon-demo-content"> 
+  <div class="col-xl-3 col-lg-4 col-sm-6">
+    <i class="bx bx-sticker"></i> bx bx-sticker
+  </div>
+  <div class="col-xl-3 col-lg-4 col-sm-6">
+    <i class="bx bx-shield-quarter"></i> bx bx-shield-quarter
+  </div>
+</div>
+  </textarea>
+  <br><br>
+
+  <button id="extractBtn">Extract Icons</button>
+
+  <h3>Icons Array:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    document.getElementById("extractBtn").addEventListener("click", function() {
+      const htmlInput = document.getElementById("htmlInput").value;
+      
+      // ১️⃣ একটি অস্থায়ী DOM তৈরি করা হচ্ছে
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = htmlInput;
+
+      // ২️⃣ সব <i> ট্যাগ খুঁজে বের করা হচ্ছে
+      const iconElements = tempDiv.querySelectorAll("i");
+
+      // ৩️⃣ icons array তৈরি করা হচ্ছে
+      const icons = [];
+
+      iconElements.forEach(icon => {
+        const parts = icon.className.split(" ");
+        // শুধু দ্বিতীয় অংশটি (যেমন "bx-sticker") নিচ্ছি
+        icons.push(parts[1]);
+      });
+
+      // ৪️⃣ আউটপুট দেখানো হচ্ছে
+      document.getElementById("output").textContent = JSON.stringify(icons, null, 2);
+    });
+  </script>
+</body>
+</html>
